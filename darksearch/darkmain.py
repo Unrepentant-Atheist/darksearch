@@ -30,8 +30,8 @@ limiter = Limiter(
 app.secret_key = os.urandom(24)  # Creates 24-char cookie
 handler = RotatingFileHandler(
                             'darksearch/logs/info.log',
-                                maxBytes=10000,
-                            backupCount=1
+                                maxBytes=100000,
+                            backupCount=10
             )
 handler.setLevel(logging.INFO)
 app.logger.setLevel(logging.INFO)
@@ -92,7 +92,7 @@ def link(onion):
     #  print root_dir
     return send_from_directory(os.path.join(root_dir, 'darksearch/darksearch/data'), onion+'.html')
 
-
+"""
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
@@ -106,7 +106,7 @@ def bad_request(e):
 @app.errorhandler(429)
 def ratelimit_handler(e):
     return render_template('429.html', notice=e.description), 429
-
+"""
 
 def make_logs(query, dur, results, page):
     """

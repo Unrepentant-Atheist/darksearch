@@ -57,11 +57,10 @@ docs/_build/
 # PyBuilder
 target/
 
-#My Additions for Data
+# See the .gitignore in logs, it prevents the logs from being uploaded...
 *.json
 *.csv
 data/
-logs/
 .DS_Store
 icons/
 darksearch-app/
